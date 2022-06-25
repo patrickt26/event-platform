@@ -28,8 +28,8 @@ export function Lesson(props: LessonProps) {
       </span>
 
       <div
-        className={classNames('rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500 transition-colors', {
-          'bg-green-500': isActiveLesson,
+        className={classNames('relative rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500 transition-colors', {
+          'bg-green-500 after:content-[""] after:block after:absolute after:left-0 after:translate-x-[-100%] after:top-[42.5%] after:w-0 after:h-0 after:border-t-8 after:border-b-8 after:border-r-8 after:border-t-transparent after:border-b-transparent after:border-r-green-500': isActiveLesson,
         })}
       >
         <header className="flex items-center justify-between">
