@@ -106,8 +106,6 @@ export function Video(props: VideoProps) {
           </a>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }
