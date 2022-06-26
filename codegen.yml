@@ -1,4 +1,4 @@
-schema: https://api-sa-east-1.graphcms.com/v2/cl4o4cqcr0iqf01z2454f5yxy/master
+schema: ${VITE_API_URL}
 documents: './src/graphql/**/*.graphql'
 generates:
   ./src/graphql/generated.ts:

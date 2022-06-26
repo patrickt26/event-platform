@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "codegen": "graphql-codegen"
+    "codegen": "graphql-codegen --require dotenv/config --config codegen.yml dotenv_config_path=.env.local"
   },
   "dependencies": {
     "@apollo/client": "^3.6.8",
