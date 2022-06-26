@@ -6,6 +6,7 @@ import { useCreateSubscriberMutation } from "../graphql/generated";
 
 import CodeMockupImg from "../assets/code-mockup.png";
 import ReactIconBgImg from "../assets/react-icon-bg.svg";
+import { Footer } from "../components/Footer";
 
 export function Subscribe() {
   const navigate = useNavigate();
@@ -73,6 +74,8 @@ export function Subscribe() {
       </div>
 
       <img src={CodeMockupImg} className="mt-[-12rem]" alt="" />
+
+      <Footer />
     </div>
   );
 }

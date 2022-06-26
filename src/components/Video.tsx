@@ -3,6 +3,7 @@ import { CaretRight, DiscordLogo, FileArrowDown, Image, Lightning } from "phosph
 
 import "@vime/core/themes/default.css";
 import { useGetLessonBySlugQuery } from "../graphql/generated";
+import { Footer } from "./Footer";
 
 interface VideoProps {
   lessonSlug: string;
@@ -34,7 +35,7 @@ export function Video(props: VideoProps) {
         </div>
       </div>
 
-      <div className="p-8 max-w-[1100px] mx-auto">
+      <div className="p-8 max-w-[1100px] mx-auto mb-10">
         <div className="flex items-start gap-16">
           <div className="flex-1">
             <h1 className="text-2xl font-bold">
@@ -105,6 +106,8 @@ export function Video(props: VideoProps) {
           </a>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
