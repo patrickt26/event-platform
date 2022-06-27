@@ -1,21 +1,33 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 import { Video } from "../components/Video";
 
+interface OpenSidebarProps {
+  isMenuOpen: boolean;
+}
+
 export function Event() {
   const { slug } = useParams<{ slug:string }>();
+  const [openSidebar, setOpenSidebar] = useState({});
+
+  const windowDimensions = window.innerWidth > 640 ? 'large' : 'small';
+
+  function toggleMenu(openMenu: OpenSidebarProps) {
+    setOpenSidebar(openMenu.isMenuOpen);
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      <Header toggleMenuParent={toggleMenu} />
       <main className="flex flex-1">
         <div className="flex flex-col flex-1">
           { slug ? <Video lessonSlug={slug} /> : <div className="flex-1" /> }
           <Footer />
         </div>
-        <Sidebar />
+        {windowDimensions === 'large' ? <Sidebar /> : (openSidebar ? <Sidebar /> : null)}
       </main>
     </div>
   );

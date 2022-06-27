@@ -34,7 +34,7 @@ export function Subscribe() {
 
       <div className="absolute w-full max-w-[1200px] flex flex-col items-center mt-20 mx-auto sm:flex-row sm:justify-between">
         <div className="max-w-[624px] flex flex-col items-center sm:block">
-          <Logo />
+          <Logo size="large" />
 
           <h1 className="mt-8 text-[1.875rem] leading-tight text-center sm:text-left sm:text-[2.5rem]">
             Construa uma <strong className="text-blue-500">aplicação completa</strong>, do zero, com <strong className="text-blue-500">React</strong>

@@ -1,9 +1,15 @@
-export function Logo() {
+interface LogoDimensionsProps {
+  size: 'small' | 'large';
+}
+
+export function Logo(props: LogoDimensionsProps) {
+  const logoDimensions = (props.size === 'small' ? ['167', '24'] : ['237', '34']);
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="237"
-      height="34"
+      width={logoDimensions[0]}
+      height={logoDimensions[1]}
       fill="none"
       viewBox="0 0 237 34"
     >
