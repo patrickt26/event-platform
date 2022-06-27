@@ -1,4 +1,3 @@
-import { gql, useMutation } from "@apollo/client";
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
@@ -33,19 +32,19 @@ export function Subscribe() {
     <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
       <img src={ReactIconBgImg} className="mt-2" alt="" />
 
-      <div className="absolute w-full max-w-[1200px] flex items-center justify-between mt-20 mx-auto">
-        <div className="max-w-[624px]">
+      <div className="absolute w-full max-w-[1200px] flex flex-col items-center mt-20 mx-auto sm:flex-row sm:justify-between">
+        <div className="max-w-[624px] flex flex-col items-center sm:block">
           <Logo />
 
-          <h1 className="mt-8 text-[2.5rem] leading-tight">
+          <h1 className="mt-8 text-[1.875rem] leading-tight text-center sm:text-left sm:text-[2.5rem]">
             Construa uma <strong className="text-blue-500">aplicação completa</strong>, do zero, com <strong className="text-blue-500">React</strong>
           </h1>
-          <p className="mt-4 text-gray-200 leading-relaxed">
+          <p className="mt-4 mx-8 text-sm text-gray-200 text-center sm:leading-relaxed sm:text-base sm:mx-0 sm:text-left">
             Em apenas uma semana você vai dominar na prática uma das tecnologias mais utilizadas e com alta demanda para acessar as melhores oportunidades do mercado.
           </p>
         </div>
 
-        <div className="p-8 bg-gray-700 border border-gray-500 rounded">
+        <div className="mt-8 p-8 bg-gray-700 border border-gray-500 rounded w-full sm:mt-0 sm:max-w-sm">
           <strong className="text-2xl mb-6 block">Inscreva-se gratuitamente</strong>
 
           <form onSubmit={handleSubscribe} className="flex flex-col gap-2 w-full">
@@ -73,7 +72,7 @@ export function Subscribe() {
         </div>
       </div>
 
-      <img src={CodeMockupImg} className="mt-[-12rem]" alt="" />
+      <img src={CodeMockupImg} className="mt-[21rem] sm:-mt-48" alt="" />
 
       <Footer />
     </div>
