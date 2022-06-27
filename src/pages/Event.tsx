@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
@@ -11,7 +11,7 @@ interface OpenSidebarProps {
 
 export function Event() {
   const { slug } = useParams<{ slug:string }>();
-  const [openSidebar, setOpenSidebar] = useState({});
+  const [openSidebar, setOpenSidebar] = useState(false);
 
   const windowDimensions = window.innerWidth > 640 ? 'large' : 'small';
 
@@ -21,13 +21,13 @@ export function Event() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header toggleMenuParent={toggleMenu} />
+      <Header toggleMenuParent={toggleMenu} isListIcon={openSidebar} />
       <main className="flex flex-1">
         <div className="flex flex-col flex-1">
           { slug ? <Video lessonSlug={slug} /> : <div className="flex-1" /> }
           <Footer />
         </div>
-        {windowDimensions === 'large' ? <Sidebar /> : (openSidebar ? <Sidebar /> : null)}
+        {windowDimensions === 'large' ? <Sidebar /> : (openSidebar ? (<div className="absolute"><Sidebar /></div>) : null)}
       </main>
     </div>
   );
