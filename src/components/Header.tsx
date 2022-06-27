@@ -4,10 +4,9 @@ import { ToggleListIcon } from "./ToggleListIcon";
 
 interface ToggleMenuProps {
   toggleMenuParent: Function;
-  isListIcon: boolean;
 }
 
-export function Header({ toggleMenuParent, isListIcon }: ToggleMenuProps) {
+export function Header({ toggleMenuParent }: ToggleMenuProps) {
   const windowDimensions = window.innerWidth > 640 ? 'large' : 'small';
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);

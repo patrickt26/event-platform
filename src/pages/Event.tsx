@@ -21,7 +21,7 @@ export function Event() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header toggleMenuParent={toggleMenu} isListIcon={openSidebar} />
+      <Header toggleMenuParent={toggleMenu} />
       <main className="flex flex-1">
         <div className="flex flex-col flex-1">
           { slug ? <Video lessonSlug={slug} /> : <div className="flex-1" /> }
